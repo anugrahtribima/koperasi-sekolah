@@ -32,3 +32,15 @@ route::group(['prefix' => 'loans', 'namespace' => 'Loans'], function(){
 route::group(['namespace' => 'Types'], function(){
     route::resource('types', 'TypeController');
 });
+
+Route::group(['prefix' =>'savings'],  function(){
+    route::get('/anggota', 'Savings\SavingController@index')->name('savings.anggota');
+});
+
+Route::group(['prefix' => 'transaksi'], function(){
+    route::get('', 'TransaksiController@index')->name('transaksi');
+});
+
+Route::group(['prefix'=> 'installments', 'namespace'=>'Installments'], function(){
+    route::get('/', 'InstallmentController@index')->name('installments.index');
+});
