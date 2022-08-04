@@ -14,17 +14,29 @@ class CreateLoansTable extends Migration
     public function up()
     {
         Schema::create('loans', function (Blueprint $table) {
-            $table->increments('id');
+            // increment = kolom yang otomatis terisi sendirinya
+            $table->increments('id'); 
+
+            // unasignedInteger = acuan untuk menghubungkan antar tabel
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('type_id');
+
+            // numerik biasa
             $table->integer('jumlah_pinjaman');
             $table->integer('jumlah_angsuran');
             $table->integer('lama_angsuran');
+
+            // boolean = 0 atau 1
             $table->boolean('terverifikasi')->default(0);
+
+            // date = mengambil tanggal
             $table->date('tanggal_pengajuan');
-            $table->date('tanggal_persetujuan')->nullable();
+            $table->date('tanggal_persetujuan')->nullable(); // nullable boleh kosong
             $table->timestamps();
 
+            // table relation
+            // foreign = nama
+            // references->on = mengambil id dari users
             $table->foreign('user_id')
                 ->references('id')->on('users')
                 ->onDelete('cascade');
