@@ -9,8 +9,8 @@ class Withdrawal extends Model
     protected $table = 'withdrawals';
     protected $guarded = [];
 
-    public function saving()
+    public function savings()
     {
-       return $this->belongsTo(Saving::class, 'tabungan_id','id');
+       return $this->belongsTo(Saving::class, 'saving_id','id');
     }
 }

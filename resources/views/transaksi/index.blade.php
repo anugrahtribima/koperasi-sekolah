@@ -42,13 +42,15 @@
                               @else
                               @foreach($transactions as $transaksi)
                               <tr>
-                                  <td>{{$transaksi->tabungan->user->name}}</td>
+                                  <td>{{$transaksi->savings->user->name}}</td>
                                   <td>{{$transaksi->total}}</td>
-                                  <td>{{$transaksi->tabungan->saldo}}</td>
+                                  <td>{{$transaksi->savings->saldo}}</td>
                                   <td>{{$transaksi->created_at->format('d-m-Y')}}</td>
                                   @role('bendahara')
                                       <td>
-                                          <a href="{{route('transaksi.cetak-bukti', $transaksi->id)}}" class="btn btn-info btn-sm">Cetak Bukti</a>
+                                          <a 
+                                          {{--  href="{{route('transaksi.cetak-bukti', $transaksi->id)}}"   --}}
+                                          class="btn btn-info btn-sm">Cetak Bukti</a>
                                       </td>
                                   @endrole
                               </tr>

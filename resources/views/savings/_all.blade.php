@@ -19,10 +19,10 @@
               <td>{{$anggota->created_at->format('d-m-Y')}}</td>
               <td>
                   <a 
-                  {{--  href="{{route('savings.edit', $anggota->id)}}"   --}}
+                  href="{{route('savings.edit', $anggota->id)}}" 
                   class="btn btn-info btn-sm">Tambah saldo</a>
                   <a 
-                  {{--  href="{{route('transaksi.edit', $anggota->id)}}"   --}}
+                  href="{{route('transaksi.edit', $anggota->id)}}" 
                   class="btn btn-info btn-sm">Tarik Uang</a>
               </td>
           </tr>

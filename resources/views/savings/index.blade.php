@@ -34,7 +34,9 @@
         @endrole
 
         @role('bendahara')
-            <a href="{{route('reports.savings')}}" class="btn btn-outline-secondary">
+            <a 
+            {{--  href="{{route('reports.savings')}}"  --}}
+            class="btn btn-outline-secondary">
                 Cetak data
             </a>
         @endrole

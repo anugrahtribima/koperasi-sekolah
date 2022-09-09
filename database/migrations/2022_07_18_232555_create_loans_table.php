@@ -34,6 +34,7 @@ class CreateLoansTable extends Migration
             $table->date('tanggal_persetujuan')->nullable(); // nullable boleh kosong
             $table->timestamps();
 
+
             // table relation
             // foreign = nama
             // references->on = mengambil id dari users

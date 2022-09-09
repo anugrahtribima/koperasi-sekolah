@@ -9,8 +9,6 @@ use App\Loan;
 use App\Saving;
 use Spatie\Permission\Traits\HasRoles;
 
-
-
 class User extends Authenticatable
 {
     use Notifiable, HasRoles;
@@ -28,14 +26,17 @@ class User extends Authenticatable
     {
         return $this->savings()->sum('saldo');
     }
+
     public function pengajuanPinjaman()
     {
         return $this->loans()->whereTerverifikasi(false);
     }
+
     public function dataPinjaman()
     {
-        return $this->loans()->whereTerverifikasi(true);
+        return $this->loans()->whereTerverifikasi(true  );
     }
+
     public function totalPinjaman()
     {
     return $this->loans()->whereTerverifikasi(true)->sum('jumlah_pinjaman');

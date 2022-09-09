@@ -7,8 +7,10 @@ use App\Loan;
 
 class LoanController extends Controller
 {
-    public function index()
-    {
+    public function index() {
         return view('loans.index')->with(['loans' => Loan::all()]);
+    }
+
+    public function create(Type $type) {
     }
 }

@@ -30,7 +30,6 @@
                     Data belum tersedia
                 </td>
             </tr>
-
         @endforelse
 
     </tbody>

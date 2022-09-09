@@ -17,7 +17,7 @@
     @role('bendahara|ketua')
     <h4>Cari Laporan</h4>
     <form 
-    {{--  action="{{route('loans.cetak')}}"  --}}
+    action="{{route('loans.cetak')}}"
      method="get">
       <div class="row">
         <div class="col-md-3">
@@ -39,7 +39,7 @@
           <a 
           class="btn btn-outline-secondary"
           href=""
-          {{--  href="{{route('loans.cetak')}}"  --}}
+          href="{{route('loans.cetak')}}"
           >Print all</a>
         </div>
         @endrole

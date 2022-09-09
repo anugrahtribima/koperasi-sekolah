@@ -27,9 +27,12 @@
             <td>Rp{{number_format($pinjaman->jumlah_angsuran, 2)}}</td>
             <td>{{$pinjaman->lama_angsuran}}</td>
             <td>{{$pinjaman->tanggal_persetujuan->format('d-m-Y')}}</td>
+
             @role('bendahara')
                 <td>
-                    <a href="{{route('installments.create', $pinjaman->id)}}" class="btn btn-sm btn-outline-primary">
+                    <a
+                    href="{{route('installments.create', $pinjaman->id)}}"
+                    class="btn btn-sm btn-outline-primary">
                             Input angsuran
                     </a>
                 </td>

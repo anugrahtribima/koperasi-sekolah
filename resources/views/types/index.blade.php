@@ -41,13 +41,9 @@
                 @forelse ($types as $type)
                     <tr>
                         <th>
-                            @role('bendahara')
-                                <a href="{{route('types.edit', $type->id)}}">
-                                    {{$type->nama_jenis_pinjaman}}
-                                </a>
-                            @else
+                            <a href="{{route('types.edit', $type->id)}}">
                                 {{$type->nama_jenis_pinjaman}}
-                            @endrole
+                            </a>
                         </th>
                         <td>Rp.{{number_format($type->minimum_jumlah_pinjaman, 2)}}</td>
                         <td>Rp.{{number_format($type->maksimum_jumlah_pinjaman, 2)}}</td>

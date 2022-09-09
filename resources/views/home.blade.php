@@ -24,7 +24,7 @@
                 @role('anggota')
                     <div class="col-md-4 col-md-offset-1">
                         <h5>
-                            Rp.
+                            Rp. 0
                             <br>
                             <small class="text-muted">Saldo Simpanan</small>
                         </h5>
@@ -56,7 +56,6 @@
                 @role('anggota')
                     <div class="col-md-4">
                         <h5>0</h5>
-                        <br>
                         <small class="text-muted">Total Pinjaman</small>
                     </div>
                 @else
