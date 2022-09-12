@@ -13,7 +13,7 @@ class CreateTabungansTable extends Migration
      */
     public function up()
     {
-        Schema::create('tabungans', function (Blueprint $table) {
+        Schema::create('savings', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
         });

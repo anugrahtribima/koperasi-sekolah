@@ -28,9 +28,7 @@
         <div class="card border-0">
             <div class="card-body">
                 <h6>Cari Laporan</h6>
-                <form 
-                action="{{route('reports.anggota')}}" 
-                method="get">
+                <form action="{{route('reports.loans')}}" method="get">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -47,9 +45,7 @@
                                 <button class="btn btn-outline-info">
                                     Cari Laporan
                                 </button>
-                                <a 
-                                href="{{route('reports.all.anggota')}}" 
-                                class="btn btn-outline-info ml-2">Cetak Semua Data</a>
+                                <a href="{{route('reports.all.loans')}}" class="btn btn-outline-info ml-2">Cetak Semua Data</a>
                             </div>
 
                         </div>
@@ -75,7 +71,6 @@
                     <th>
                         <a 
                         {{--  href="{{route('users.edit', $anggota->id)}}"  --}}
-                        
                         >
                             {{$anggota->nip}}
                         </a>

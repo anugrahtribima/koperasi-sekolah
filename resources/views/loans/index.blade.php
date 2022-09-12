@@ -11,13 +11,13 @@
         <h6 class="mb-0 text-white lh-100">Data Pinjaman</h6>
         <small class="text-white">Semua data pinjaman</small>
       </div>
-    </div> 
+    </div>
 
     {{--  role sekretaris|ketua  --}}
-    @role('bendahara|ketua')
+    @role('bendahara|ketua') 
     <h4>Cari Laporan</h4>
     <form 
-    action="{{route('loans.cetak')}}"
+    action="{{route('reports.loans')}}"
      method="get">
       <div class="row">
         <div class="col-md-3">
@@ -38,8 +38,7 @@
         <div class="col-md-3">
           <a 
           class="btn btn-outline-secondary"
-          href=""
-          href="{{route('loans.cetak')}}"
+          href="{{route('reports.all.loans')}}"
           >Print all</a>
         </div>
         @endrole

@@ -10,7 +10,7 @@ class TransaksiController extends Controller
 {
     public function index()
     {
-        $transactions = Withdrawals::with('savings')->get();
+        $transactions = Withdrawal::with('savings')->get();
         return view('transaksi.index', compact('transactions'));
     }
 

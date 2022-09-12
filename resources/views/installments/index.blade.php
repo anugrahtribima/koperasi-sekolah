@@ -16,7 +16,7 @@
                 <div class="card-body">
                     <h6>Cari laporan</h6>
                     <form
-                     {{--  action="{{route('reports.moon.installments')}}"  --}}
+                     action="{{route('reports.moon.installments')}}"
                      method="get">
 
                         <div class="row">
@@ -36,7 +36,7 @@
                         <div class="d-flex">
                             <button class="btn btn-outline-info">Cari laporan</button>
                             <a 
-                            {{--  href="{{route('reports.installments')}}"   --}}
+                            href="{{route('reports.installments')}}" 
                             class="btn btn-outline-info ml-2">Cetak Semua Laporan</a>
                         </div>
                     </form>

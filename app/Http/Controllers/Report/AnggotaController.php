@@ -11,10 +11,12 @@ class AnggotaController extends Controller
 {
     public function moon(Request $request)
     {
+        $users = User::all();
         if ($request->has('tgl_awal')) {
             $users = User::whereBetween('created_at', [request('tgl_awal'), request('tgl_akhir')])
             ->get();
         }
+
 
         $pdf = PDF::loadView('cetak.anggota.moon', compact('users'))->setPaper('a3', 'landscape');
 

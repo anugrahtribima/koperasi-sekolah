@@ -49,7 +49,7 @@
                                   @role('bendahara')
                                       <td>
                                           <a 
-                                          {{--  href="{{route('transaksi.cetak-bukti', $transaksi->id)}}"   --}}
+                                          href="{{route('transaksi.cetak-bukti', $transaksi->id)}}" 
                                           class="btn btn-info btn-sm">Cetak Bukti</a>
                                       </td>
                                   @endrole
