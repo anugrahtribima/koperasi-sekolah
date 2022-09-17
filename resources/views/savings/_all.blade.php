@@ -12,9 +12,9 @@
   <tbody>
       @forelse ($users as $anggota)
           <tr>
-              <td>{{$anggota->nip}}</td>
-              <td>{{$anggota->name}}</td>
-              <td>{{$anggota->email}}</td>
+              <td>{{$anggota->user->nip}}</td>
+              <td>{{$anggota->user->name}}</td>
+              <td>{{$anggota->user->email}}</td>
               <td>Rp. {{number_format($anggota->saldo, 2)}}</td>
               <td>{{$anggota->created_at->format('d-m-Y')}}</td>
               <td>

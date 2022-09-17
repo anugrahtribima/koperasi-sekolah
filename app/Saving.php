@@ -19,6 +19,8 @@ class Saving extends Model
         return $this->hasMany(Withdrawal::class);
     }
 
-
-
+    public function Totalsaldo()
+    {
+        return $this->sum('saldo');
+    }
 }

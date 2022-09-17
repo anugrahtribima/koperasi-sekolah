@@ -37,12 +37,12 @@
                         @forelse($users as $user)
                         <tr>
                             <th>
-                                {{ $user->nip }}
+                                {{ $user->user->nip }}
                             </th>
-                            <td>{{ $user->name }}</td>
-                            <td>{{ $user->email }}</td>
-                            <td>Rp{{ number_format($user->totalSaldo(), 2) }}</td>
-                            <td>{{ $user->created_at->format('d-m-Y')}}</td>
+                            <td>{{ $user->user->name }}</td>
+                            <td>{{ $user->user->email }}</td>
+                            <td>Rp{{ number_format($user->user->totalSaldo(), 2) }}</td>
+                            <td>{{ $user->user->created_at->format('d-m-Y')}}</td>
                         </tr>
                         @empty
                         <tr>

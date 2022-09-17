@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="col-md-6 col-lg-6 mx-auto">
+<div class="mt-4 col-lg-8 mx-auto rounded">
     <div class="card card-user">
         <div class="image">
-            <img src="{{ asset('asset/img/newbg.png') }}" width="100%" alt="...">
+            <img src="{{ asset('asset/img/newbg.png') }}" class="rounded-top" width="100%" alt="...">
         </div>
         <div class="content text-center">
             <div class="author">
@@ -18,85 +18,101 @@
                 <small>{{Auth::user()->created_at->diffForHumans()}}</small>
             </div>
         </div>
-        <hr>
-        <div class="text-center">
-            <div class="row">
+        <div class="text-center pb-5 mt-5 bg-light d-flex justify-content-center">
+            <div class="row m-0 p-3" style="width: 100%">
                 @role('anggota')
-                    <div class="col-md-4 col-md-offset-1">
-                        <h5>
-                            Rp. 0
-                            <br>
+                    <div class="home-menu col-md-4 mt-4 border">
+                        <div class="card rounded shadow p-2">
+                            <h5>
+                                Rp.{{number_format(auth()->user()->totalSaldo(), 2)}}
+                            </h5>
                             <small class="text-muted">Saldo Simpanan</small>
-                        </h5>
+                        </div>
                     </div>
-                @else
-                    <div class="col-md-4 col-md-offset-1">
-                        <h5>Rp.0</h5>
-                        <br>
-                        <small>Tabungan</small>
-                    </div>
-                @endrole
-                @role('anggota')
-                    <div class="col-md-4">
-                        <h5>
-                            {{auth()->user()->dataPinjaman()->count()}}
-                            <br>
-                            <small class="text-center">Data Pinjaman</small>
-                        </h5>
-                    </div>
-                @else
-                    <div class="col-md-4">
-                        <h5>
-                            0
-                        </h5>
-                        <br>
-                        <small>Data Pinjaman</small>
+                    @else
+                    <div class="home-menu col-md-4 mt-4 border">
+                        <div class="card rounded shadow p-2">
+                            <h5>Rp.{{number_format($savings->sum('saldo'), 2)}}</h5>
+                            <small>Tabungan</small>
+                        </div>
                     </div>
                 @endrole
                 @role('anggota')
-                    <div class="col-md-4">
-                        <h5>0</h5>
+                    <div class="home-menu col-md-4 mt-4 border">
+                        <div class="card rounded shadow p-2">
+                            <h5>
+                                {{auth()->user()->dataPinjaman()->count()}}
+                            </h5>
+                            <small class="text-muted">Data Pinjaman</small>
+                        </div>
+                    </div>
+                    @else
+                    <div class="home-menu col-md-4 mt-4 border">
+                        <div class="card rounded shadow p-2">
+                            <h5>
+                                {{$pengajuan->where('terverifikasi', true)->count()}}
+                            </h5>
+                            <small>Data Pinjaman</small>
+                        </div>
+                    </div>
+                @endrole
+                @role('anggota')
+                <div class="home-menu col-md-4 mt-4 border">
+                    <div class="card rounded shadow p-2">
+                        <h5>
+                            Rp.{{number_format(auth()->user()->totalPinjaman(), 2)}}
+                        </h5>
                         <small class="text-muted">Total Pinjaman</small>
                     </div>
+                </div>
                 @else
-                    <div class="col-md-4">
+                <div class="home-menu col-md-4 mt-4 border">
+                    <div class="card rounded shadow p-2">
                         <h5>
-                            Rp. 0
+                            Rp.{{number_format($pengajuan->where('terverifikasi', true)->sum('jumlah_pinjaman'), 2)}}
                         </h5>
-                        <br>
                         <small>Total Pinjaman</small>
                     </div>
+                </div>
                 @endrole
                 @role('anggota')
-                    <div class="col-md-4">
+                <div class="home-menu col-md-4 mt-4 border">
+                    <div class="card rounded shadow p-2">
                         <h5>
-                        {{auth()->user()->pengajuanPinjaman()->count()}}
-                            <br>
-                            <small class="text-muted">Pengajuan pinjaman</small>
+                            {{auth()->user()->pengajuanPinjaman()->count()}}
                         </h5>
+                        <small class="text-muted">Pengajuan pinjaman</small>
                     </div>
-                @endrole
-                @role('anggota')
-                    <div class="col-md-4">
-                        <h5>
-                            0
-                            {{--  {{$penarikan}}  --}}
-                            <br>
-                            <a href="#">
-                                <small class="text-center">Penarikan</small>
-                            </a>
-                        </h5>
-                    </div>
+                </div>
                 @else
-                    <div class="col-md-4">
-                        <h5 class="mb-3">
+                <div class="home-menu col-md-4 mt-4 border-4">
+                    <div class="card rounded shadow p-2">
+                        <h5>
+                            {{$pengajuan->where('terverifikasi', false)->count()}}
                         </h5>
-                        <a href="#">
+                        <small class="text-muted">Pengajuan pinjaman</small>
+                    </div>
+                </div>
+                @endrole
+                @role('anggota')
+                <div class="home-menu col-md-4 mt-4 border">
+                    <div class="card rounded shadow p-2">
+                        <h5>{{$penarikan}}</h5>
+                        <a href="{{route('penarikan')}}">
                             <small class="text-muted">Penarikan</small>
                         </a>
                     </div>
+                </div>
+                @else
+                <div class="home-menu col-md-4 mt-4 border">
+                    <div class="card rounded shadow p-2">
+                        <h5>{{$pengajuan->where('terverifikasi', false)->count()}}</h5>
+                        <a href="{{route('penarikan')}}">
+                            <small class="text-muted">Penarikan</small>
+                        </a>
+                    </div>
+                </div>
                 @endrole
-
             </div>
         </div>
     </div>

@@ -10,7 +10,7 @@ use App\Saving;
 class SavingController extends Controller
 {
     public function index() {
-        $users = User::all();
+        $users = Saving::with('user')->get();
         return view('savings.index', compact('users'));
     }
 
@@ -19,7 +19,6 @@ class SavingController extends Controller
         $roles = User::all();
         return view('savings.create',compact('roles'));
     }
-
     public function store(Request $request)
     {
 

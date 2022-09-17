@@ -33,7 +33,7 @@
                             <th>Nama Anggota</th>
                             <th>Roles</th>
                             <th>Email</th>
-                            <th>Gender</th>
+                            <th>Gender 1</th>
                             <th>Jabatan</th>
                             <th>Address</th>
                             <th>No.Telp</th>

@@ -74,11 +74,12 @@ Route::group(['prefix' => 'users', 'namespace' => 'Users'], function(){
 });
 
 Route::group(['prefix' =>'reports'],function(){
-    Route::get('reports/savings', 'Reports\ReportController@savings')->name('reports.savings');
-    Route::get('reports/anggota', 'Report\AnggotaController@moon')->name('reports.loans');
-    Route::get('reports/all/anggota', 'Report\AnggotaController@all')->name('reports.all.loans');
-    Route::get('reports/moon/installments', 'Reports\InstallmentController@moonthly')->name('reports.moon.installments');
-    Route::get('reports/installments', 'Reports\InstallmentController@all')->name('reports.installments');
+    Route::get('reports/savings', 'Report\ReportController@savings')->name('reports.savings');
+    Route::get('reports/anggota', 'Report\LoanController@moon')->name('reports.loans');
+    Route::get('reports/all/anggota', 'Report\LoanController@all')->name('reports.all.loans');
+    Route::get('reports/all/transaksi', 'Report\TransaksiController@all')->name('reports.all.transaksi');
+    Route::get('reports/moon/installments', 'Report\InstallmentController@moonthly')->name('reports.moon.installments');
+    Route::get('reports/installments', 'Report\InstallmentController@all')->name('reports.installments');
 });
 
 Route::group(['prefix' => 'transaksi'], function(){

@@ -12,6 +12,7 @@ class KwitansiController extends Controller
     {
         $penarikan = Withdrawal::findOrFail($id);
 
+        // dd($penarikan);
 
         $pdf = PDF::loadView('transaksi.kwitansi', compact('penarikan'))->setPaper('a5', 'potrait');
 

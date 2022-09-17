@@ -9,7 +9,6 @@
             <form 
             {{--  action="{{route('users.store')}}"  --}}
              method="post">
-                
                 @csrf
                 <div class="row">
                     <div class="col-md-4">

@@ -26,7 +26,6 @@ class User extends Authenticatable
     {
         return $this->savings()->sum('saldo');
     }
-
     public function pengajuanPinjaman()
     {
         return $this->loans()->whereTerverifikasi(false);

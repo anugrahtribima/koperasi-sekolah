@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Saving;
+use App\Loan;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $data = [
+            'pengajuan' => Loan::with('user')->where('user_id', Auth::user()->id),
+            'savings'   => Saving::with('user')->where('user_id', Auth::user()->id),
+            'penarikan'   => Saving::with('withdrawals')->where('user_id', Auth::user()->id)->count(),
+        ];
+
+        return view('home', $data);
     }
 }

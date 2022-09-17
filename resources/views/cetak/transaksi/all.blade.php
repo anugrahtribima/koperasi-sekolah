@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div >
-                    <img src="{{asset('asset/img/tamansiswa.png')}}" alt="" width="10%" height="10%">
+                    <img src="{{asset('asset/img/logo.png')}}" alt="" width="10%" height="10%">
              
                             <h6>
                                 {{ config('app.name', 'Laravel') }}

@@ -12,14 +12,12 @@
         <div class="row">
             <div class="col-md-12">
                 <div >
-                    <img src="{{asset('asset/img/logo.png')}}" alt="" width="10%" height="10%">
-                    <P>
-                        <b>
+                    <img src="{{asset('asset/img/tamansiswa.png')}}" alt="" width="10%" height="10%">
+             
                             <h6>
                                 {{ config('app.name', 'Laravel') }}
                             </h6>
-                        </b>
-                    </P>
+             
                 </div>
                 <u>
                     <h4 class="text-center">Laporan Periode Pinjaman</h4>
